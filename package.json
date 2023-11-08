@@ -8,11 +8,11 @@
     "gatsby"
   ],
   "scripts": {
-    "start": "concurrently \"npm run server\" \"npm run develop\"",
+    "start": "gatsby develop",
     "develop": "gatsby develop",
     "server": "node server.js",
     "try": "gatsby build",
-    "build": "concurrently \"npm run server\" \"npm run try\"",
+    "build": "gatsby build",
     "serve": "gatsby serve",
     "clean": "gatsby clean"
   },

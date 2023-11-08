@@ -6,7 +6,7 @@ const IndexPage = () => {
   const [data, setData] = useState({});
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/data')
+    axios.get('https://8080-cs-09125b9c-5d84-4a83-b6c4-2c4da658958c.cs-us-east1-vpcf.cloudshell.dev/api/data')
       .then(response => {
         setData(response.data);
       })
