@@ -1,6 +1,8 @@
 /**
  * @type {import('gatsby').GatsbyConfig}
  */
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
 module.exports = {
   siteMetadata: {
     title: `Mono`,
@@ -25,5 +27,16 @@ module.exports = {
       "path": "./src/pages/"
     },
     __key: "pages"
-  }]
+  }],
+  developMiddleware: (app) => {
+    app.use(
+      '/api',
+      createProxyMiddleware({
+        target: 'http://localhost:5000', // Endereço do servidor Node.js
+        pathRewrite: {
+          '^/api': '',
+        },
+      })
+    );
+  },
 };
