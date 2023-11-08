@@ -3,10 +3,11 @@ import axios from 'axios';
 import Layout from "../components/layout"
 
 const IndexPage = () => {
-  const [data, setData] = useState({});
+  const [data, setData, token] = useState({});
 
   useEffect(() => {
-    axios.get('https://8080-cs-09125b9c-5d84-4a83-b6c4-2c4da658958c.cs-us-east1-vpcf.cloudshell.dev/api/data')
+
+    axios.get('http://192.168.0.105:8080/api/data')
       .then(response => {
         setData(response.data);
       })
@@ -14,7 +15,7 @@ const IndexPage = () => {
         console.error('Ocorreu um erro ao buscar os dados');
         console.error(error);
       });
-  }, []);
+    }, []);
 
   return (
     <Layout>
