@@ -1,8 +1,9 @@
 import React from "react";
-import "./layout.css";
+import "./styles/layout.css";
 import { Link} from 'gatsby'
 import logo from '../images/logo.png'
-
+import { StaticImage } from "gatsby-plugin-image"
+import Footer from "./footer"
 
 export default function Layout({ children }) {
   return (
@@ -22,12 +23,12 @@ export default function Layout({ children }) {
                 <Link to="/" className="header__item-link">
                     <button className="button-red" type="button">+ livro</button>
                 </Link>
-
             </nav>
         </div>
         <div className="main__content">
             {children}
         </div>
+        <Footer/>
     </main >
   );
 }

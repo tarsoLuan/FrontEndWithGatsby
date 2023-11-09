@@ -1,0 +1,1 @@
+require('./src/components/styles/global.css')

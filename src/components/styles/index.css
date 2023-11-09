@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,600;1,400&display=swap');
+ 
+h1{
+    font-family: 'Rubik', sans-serif;
+    color: #E0DACB;
+}
+
+.title__section{
+    margin-top: 80px;
+    text-align: center;
+}
+
+.books__section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.book__card{
+    width: 200px;
+    height: 300px;
+    margin: 20px;
+}
+
+.book__card:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.book__card-info {
+    text-align: center;
+}
+
+.book__image{
+    width: auto;
+    height: 250px;
+    object-fit: cover;
+}
+
+.lastReview__section{
+    margin: 2% 20%;
+    font-family: 'Rubik', sans-serif;
+    color: #E0DACB
+}
+
+.speech-bubble {
+    display: grid;
+    grid-template-columns: 1fr 10fr;
+    position: relative;
+    max-width: 30em;
+    background-color: #663f3a8a;
+    padding: 20px;
+    font-size: 1.25em;
+    border-radius: 1rem;
+    box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+}
+
+.speech-bubble::before {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 0;
+	bottom: 100%;
+	left: 1em;
+	border: .75rem solid transparent;
+	border-top: none;
+	border-bottom-color: #663f3a8a;
+	filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
+}
+
+.text__section {
+    font-size: small;
+}
+
+.text__section-title {
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.text__section-review {
+    margin: 2px 0;
+    font-weight: 0;
+}
+
+  
+  
