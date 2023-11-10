@@ -2,7 +2,6 @@ import React from "react";
 import "./styles/layout.css";
 import { Link} from 'gatsby'
 import logo from '../images/logo.png'
-import { StaticImage } from "gatsby-plugin-image"
 import Footer from "./footer"
 
 export default function Layout({ children }) {

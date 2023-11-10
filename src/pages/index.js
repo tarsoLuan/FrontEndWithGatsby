@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
 import { styled } from '@mui/material/styles';
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
 import StarIcon from '@mui/icons-material/Star';
 import axios from 'axios';
 import Layout from "../components/layout"
-import book from '../images/book.png'
 import profile from '../images/profile.png'
 import "../components/styles/index.css";
 
+
 const IndexPage = () => {
-  const [data, setData, token] = useState({});
+  const [items, setItems] = useState({});
 
   const StyledRating = styled(Rating)({
     '& .MuiRating-iconFilled': {
@@ -19,16 +19,33 @@ const IndexPage = () => {
   });
 
   useEffect(() => {
-
-    axios.get('http://192.168.0.105:8080/api/data')
-      .then(response => {
-        setData(response.data);
+   
+    axios.get('http://192.168.0.103:8080/api/review/last', {params: {id: 1}}).then(response => {
+      setItems(response.data);
+      console.log(response.data);
       })
       .catch(error => {
         console.error('Ocorreu um erro ao buscar os dados');
         console.error(error);
       });
-    }, []);
+   
+  }, []);
+
+  let allItems = [];
+
+  for(let i = 0; i < items.length; i++){
+    allItems.push(
+    <div className='book__card' key={i}>
+      <img className='book__image' src={`data:image;base64,${items[i].Book.imageBlob}`} alt='book'></img>
+      <div className='book__card-info'>
+        <Typography component="legend"></Typography>
+        <StyledRating name="read-only" value={items[i].rating} readOnly emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}/>
+      </div>
+    </div>
+  )
+  }
+
+  console.log(allItems)
 
   return (
     <Layout>
@@ -36,22 +53,14 @@ const IndexPage = () => {
         <h1 className='text__title'>Seja bem vindo de volta, Luan!</h1> 
         <h1 className='text__title'>Veja os últimos livros que você leu:</h1>
       </div>
-      
       <div className='books__section'>
-        <div className='book__card'>
-            <img className='book__image' src={book} alt='book'></img>
-            <div className='book__card-info'>
-              <Typography component="legend"></Typography>
-              <StyledRating name="read-only" value='3' readOnly emptyIcon={<StarIcon style={{ opacity: 0.55 }} fontSize="inherit" />}/>
-            </div>
-        </div>
+        {allItems}
       </div>
-
       <div className='lastReview__section'>
         <h3>Última resenha</h3>
         <div className='speech-bubble'>
           <div className='icon__section'>
-            <img src={profile}></img>
+            <img src={profile} alt='profile'></img>
           </div>
           <div className='text__section'>
             <p className='text__section-title'>KAFKA ON THE SHORE</p>

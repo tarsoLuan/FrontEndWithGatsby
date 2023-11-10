@@ -18,6 +18,7 @@ h1{
 }
 
 .book__card{
+    text-align: center;
     width: 200px;
     height: 300px;
     margin: 20px;
