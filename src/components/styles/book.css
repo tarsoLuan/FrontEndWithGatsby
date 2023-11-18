@@ -1,0 +1,15 @@
+
+.book__card:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
+.book__card-info {
+    text-align: center;
+}
+
+.book__image{
+    width: auto;
+    height: 80%;
+    object-fit: cover;
+}

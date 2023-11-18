@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,600;1,400&display=swap');
+ 
+h1{
+    font-family: 'Rubik', sans-serif;
+    color: #E0DACB;
+}
+
+.title__section-text{
+    margin-top: 80px;
+    text-align: center;
+}
+
+.books__section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.lastReview__section{
+    margin: 2% 20%;
+    font-family: 'Rubik', sans-serif;
+    color: #E0DACB
+}
+
+.text__section {
+    font-size: small;
+}
+
+.text__section-title {
+    font-weight: 300;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.text__section-review {
+    margin: 2px 0;
+    font-weight: 0;
+}
+
+  
+  

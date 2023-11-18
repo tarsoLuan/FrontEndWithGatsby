@@ -27,9 +27,17 @@ button[type="submit"]:hover {
     color:black;
     font-family: 'Rubik', sans-serif;
     font-weight: 600;
+    padding: 0px;
+    cursor: pointer;
+}
+
+.home__button{
+    display: flex;
 }
 
 .header__layout-grid{
+    color: #E0DACB;
+    font-weight: 600;
     height: 75px;
 }
 
@@ -49,7 +57,6 @@ button[type="submit"]:hover {
 }
 
 .header__item-title {
-    color: #E0DACB;
     padding: 0 35px 0 0px;
     font-size: 30px;
     padding-bottom: 6px;
@@ -57,17 +64,15 @@ button[type="submit"]:hover {
 
 .header__item-logo {
     padding: 0 15px;
-    color: #E0DACB;
 }
 
 .header__item-username {
     padding: 0 35px;
-    color: #E0DACB;
+    text-transform: uppercase;
 }
 
 .header__item-books {
     padding: 0 35px;
-    color: #E0DACB;
 }
 
 .header__item-searchbar {

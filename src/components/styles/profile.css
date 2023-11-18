@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,600;1,400&display=swap');
+
+.profile__content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.books__section-profile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.profile__information {
+    margin-top: 50px;
+    height: 40%;
+    display: flex;
+    margin-left: 30%;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    color: #E0DACB;
+}
+
+.profile__image-section {
+    width: 180px;
+    height: 180px;
+}
+
+.profile__image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 1px solid #E0DACB;
+}
+
+.profile__info {
+    margin-left: 50px;
+    font-size: larger;
+}
+
+.metrics__section {
+    padding-top: 1em;
+    display: flex;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    color: #E0DACB;
+}
+
+.metrics__section-item {
+    margin-right: 20px;
+    text-align: center;
+}
+
+.metrics__section-item-value {
+    margin-block-start:0px;
+    margin-block-end:0px;
+    font-weight: 600;
+}
+
+.metrics__section-item-title {
+    margin-block-start:0px;
+    margin-block-end:0px;
+    font-weight: 1;
+}
+
+.right__content {
+    margin-top: 50px;
+}
+
+.reviews__section {
+    margin-block-start: 0px;
+    margin-block-end: 0px;
+    margin-top: 1em;
+}
+
+.link__white{
+    color: #E0DACB;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 1;
+    max-width: 40em;
+    text-align: end;
+}

@@ -1,89 +1,172 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,600;1,400&display=swap');
- 
-h1{
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,600;1,300;1,400&display=swap');
+
+html,body {
+    height: 100%;
+	margin: 0;
+}
+
+@media (max-width: 1333px) {
+    .main {
+       grid-template-columns: 1fr;
+    }
+
+    .login__section {
+        min-width: 100%;
+    }
+
+    .slideshow {
+        display: none;
+        visibility: hidden;
+        opacity: 0;
+        -webkit-transition: opacity 600ms, visibility 600ms;
+        transition: opacity 600ms, visibility 600ms;
+    }
+    
+}
+
+.main{
+    height: 100vh;
+    overflow:hidden;
+    margin: 0;
+    display: grid;
+    grid-template-columns: auto 0.45fr
+}
+
+.header__item-title {
+    padding: 0 35px 0 0px;
+    font-size: 30px;
+    padding-bottom: 6px;
+}
+
+.header__item-logo {
+    padding: 0 15px;
+}
+
+.slideshow {
+    z-index: 1;
+    top: 0;
+    overflow: hidden;
+    min-width: 700px;
+    width: 100%;
+    height: 100vh;
+}
+
+.slideshowSlider {
+    white-space: nowrap;
+    transition: ease 1000ms;
+}
+  
+.slide {
+    min-width: 700px;
+    width: 100%; /* or any custom size */
+    height: 100vh;
+    /* object-fit: contain; */
+}
+
+.title__section{
+    margin-top: 50px;
+    margin-left: 70px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    color: #E0DACB;
+    text-align: left;
+}
+
+.login__card {
+    min-width: 628px;
+}
+
+.login__section {
+    margin-top: 80px;
+    width: 55%;
+}
+
+.login__text-default {
+    font-size: 60px;
+    margin-block-end: 0;
+    margin-block-start: 0;
+    font-weight: 600;
+    padding: 0;
+}
+
+.login__text-italic {
+    margin-block-end: 0;
+    margin-block-start: 1em;
+    padding: 0;
+    font-weight: 1;
+    font-style: italic;
+}
+
+.logo__section {
+    display: flex;
+}
+
+.form__section{
+    margin-top: 50px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    color: #E0DACB;
+}
+
+.input__box {
+    width: 100%;
+    height: 35px;
+    margin-top: 15px;
+    padding-bottom: 5px;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #E0DACB;
+    font-size: 20px;
     font-family: 'Rubik', sans-serif;
     color: #E0DACB;
 }
 
-.title__section{
-    margin-top: 80px;
-    text-align: center;
-}
-
-.books__section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 50px;
-}
-
-.book__card{
-    text-align: center;
-    width: 200px;
-    height: 300px;
-    margin: 20px;
-}
-
-.book__card:hover{
-    transform: scale(1.1);
-    transition: 0.5s;
-}
-
-.book__card-info {
-    text-align: center;
-}
-
-.book__image{
-    width: auto;
-    height: 250px;
-    object-fit: cover;
-}
-
-.lastReview__section{
-    margin: 2% 20%;
+.input__box:focus {
     font-family: 'Rubik', sans-serif;
-    color: #E0DACB
+    color: #E0DACB;
+    outline: none;
 }
 
-.speech-bubble {
-    display: grid;
-    grid-template-columns: 1fr 10fr;
-    position: relative;
-    max-width: 30em;
-    background-color: #663f3a8a;
-    padding: 20px;
-    font-size: 1.25em;
-    border-radius: 1rem;
-    box-shadow:	0 0.125rem 0.5rem rgba(0, 0, 0, .3), 0 0.0625rem 0.125rem rgba(0, 0, 0, .2);
+.button__section{
+    text-align: center;
 }
 
-.speech-bubble::before {
-	content: '';
-	position: absolute;
-	width: 0;
-	height: 0;
-	bottom: 100%;
-	left: 1em;
-	border: .75rem solid transparent;
-	border-top: none;
-	border-bottom-color: #663f3a8a;
-	filter: drop-shadow(0 -0.0625rem 0.0625rem rgba(0, 0, 0, .1));
+.form__button{
+    margin-top: 50px;
+    width: 40%;
+    height: 35px;
+    background-color: #A64235;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 600;
+    color: #000000;
+    cursor: pointer;
+    max-width: 210px;
 }
 
-.text__section {
-    font-size: small;
-}
-
-.text__section-title {
+.component__footer {
+    display: flex;
+    margin-top: 30px;
+    font-family: 'Rubik', sans-serif;
     font-weight: 300;
-    margin-top: 0;
-    margin-bottom: 5px;
+    color: #E0DACB;
+    text-align: center;
+    justify-content: center;
 }
 
-.text__section-review {
-    margin: 2px 0;
-    font-weight: 0;
+.footer__text {
+    padding-left: 10px;
+
 }
 
-  
-  
+.footer__text-link{
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    color:#A64235;
+    padding-left: 10px;
+    cursor: pointer;
+}
+
