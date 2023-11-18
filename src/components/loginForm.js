@@ -32,7 +32,11 @@ export default function LoginForm({stateChanger}) {
         } else {
             axios.post('http://192.168.0.104:8080/api/user', inputs).then(response => {
                 const user = response.data;
-                window.localStorage.setItem("user", JSON.stringify(user))
+
+                if (typeof window !== `undefined`){
+                    window.localStorage.setItem("user", JSON.stringify(user));
+                }
+               
                 navigate('/home');
             })
             .catch(error => {

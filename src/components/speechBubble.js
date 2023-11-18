@@ -7,7 +7,11 @@ import "./styles/speechBubble.css";
 
 export default function SpeechBubble({review}) {
 
-    const user = JSON.parse(window.localStorage.getItem("user"));
+  let user;
+
+  if (typeof window !== `undefined`){
+      user = JSON.parse(window.localStorage.getItem("user"));
+  }
 
     const StyledRating = styled(Rating)({
         '& .MuiRating-iconFilled': {

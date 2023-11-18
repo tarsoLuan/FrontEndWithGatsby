@@ -6,7 +6,12 @@ import SpeechBubble from './speechBubble';
 import "../components/styles/profile.css";
 
 export default function Profile({}) {
-    const user = JSON.parse(window.localStorage.getItem("user"));
+    let user;
+
+    if (typeof window !== `undefined`){
+        user = JSON.parse(window.localStorage.getItem("user"));
+    }
+    
     const [items, setItems] = useState({});
     const [reviews, setReviews] = useState({});
     const [isLoading, setIsLoading] = useState(false);

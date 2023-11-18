@@ -9,7 +9,12 @@ import Footer from "./footer"
 
 
 export default function Layout({ children }) {
-    const user = JSON.parse(window.localStorage.getItem("user"));
+    let user;
+
+    if (typeof window !== `undefined`){
+        user = JSON.parse(window.localStorage.getItem("user"));
+    }
+    
     const [open, setOpen] = React.useState(false);
 
     const StyledLink = styled(props => <Link {...props} />)`

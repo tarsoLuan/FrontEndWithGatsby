@@ -15,7 +15,13 @@ export default function AddBook({pageChanger, book}) {
 
     const [value, setValue] = useState(0);
 
-    const user = JSON.parse(window.localStorage.getItem("user"));
+    let user;
+
+    if (typeof window !== `undefined`){
+        user = JSON.parse(window.localStorage.getItem("user"));
+    }
+
+   
 
     const [inputs, setInputs] = useState({
         userId: null,

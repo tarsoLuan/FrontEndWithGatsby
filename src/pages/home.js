@@ -12,7 +12,11 @@ const IndexPage = () => {
   const [reviews, setReviews] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
-  const user = JSON.parse(window.localStorage.getItem("user"));
+  let user;
+
+    if (typeof window !== `undefined`){
+        user = JSON.parse(window.localStorage.getItem("user"));
+    }
 
   const card_style = {
     'text-align': 'center',
