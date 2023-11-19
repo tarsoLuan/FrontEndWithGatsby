@@ -3,14 +3,11 @@ import axios from 'axios';
 import Loading from "../components/loading";
 import Book from '../components/book';
 import SpeechBubble from './speechBubble';
+import {getUser} from "../auth";
 import "../components/styles/profile.css";
 
 export default function Profile({}) {
-    let user;
-
-    if (typeof window !== `undefined`){
-        user = JSON.parse(window.localStorage.getItem("user"));
-    }
+    const user = getUser();
     
     const [items, setItems] = useState({});
     const [reviews, setReviews] = useState({});

@@ -4,17 +4,14 @@ import { styled } from '@mui/material/styles';
 import { Link} from 'gatsby'
 import logo from '../images/logo.png'
 import AddContent from "./addContent";
+import {getUser} from "../auth";
 import Footer from "./footer"
 
 
 
 export default function Layout({ children }) {
-    let user;
+    const user = getUser();
 
-    if (typeof window !== `undefined`){
-        user = JSON.parse(window.localStorage.getItem("user"));
-    }
-    
     const [open, setOpen] = React.useState(false);
 
     const StyledLink = styled(props => <Link {...props} />)`

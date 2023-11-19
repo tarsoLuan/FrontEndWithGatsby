@@ -3,6 +3,7 @@ import { styled } from '@mui/material/styles';
 import Rating from '@mui/material/Rating';
 import Typography from '@mui/material/Typography';
 import StarIcon from '@mui/icons-material/Star';
+import {getUser} from "../auth";
 import "./styles/addContent.css";
 import axios from 'axios';
 
@@ -14,14 +15,8 @@ export default function AddBook({pageChanger, book}) {
     });
 
     const [value, setValue] = useState(0);
-
-    let user;
-
-    if (typeof window !== `undefined`){
-        user = JSON.parse(window.localStorage.getItem("user"));
-    }
-
    
+    const user = getUser();
 
     const [inputs, setInputs] = useState({
         userId: null,

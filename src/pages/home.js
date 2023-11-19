@@ -4,6 +4,7 @@ import Loading from "../components/loading";
 import Layout from "../components/layout"
 import SpeechBubble from '../components/speechBubble';
 import Book from '../components/book';
+import {getUser} from "../auth";
 import "../components/styles/home.css";
 
 
@@ -12,11 +13,7 @@ const IndexPage = () => {
   const [reviews, setReviews] = useState({});
   const [isLoading, setIsLoading] = useState(false);
 
-  let user;
-
-    if (typeof window !== `undefined`){
-        user = JSON.parse(window.localStorage.getItem("user"));
-    }
+  const user = getUser();
 
   const card_style = {
     'text-align': 'center',
