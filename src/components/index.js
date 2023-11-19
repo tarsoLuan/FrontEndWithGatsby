@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import logo from '../images/logo.png'
 import LoginForm from './loginForm'
 import SigninForm from './signinForm'
+import { GatsbyImage} from 'gatsby-plugin-image'
 import "../components/styles/index.css";
 
 

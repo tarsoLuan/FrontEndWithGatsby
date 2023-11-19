@@ -10,6 +10,8 @@ export default function LoginForm({stateChanger}) {
         password: null
     });
 
+    const [isLoading, setIsLoading] = useState(false);
+
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
@@ -19,6 +21,7 @@ export default function LoginForm({stateChanger}) {
     const handleSubmit = (event) => {
         console.log(inputs);
         event.preventDefault();
+        setIsLoading(true)
 
         let isEmpty = false;
 
@@ -30,17 +33,24 @@ export default function LoginForm({stateChanger}) {
 
         if(isEmpty === true){
             alert('Preencha todos os campos');
+            setIsLoading(false)
         } else {
             axios.post('http://192.168.0.104:8080/api/user', inputs)
             .then(res=>res.data)
             .then(data=> {
                 console.log(data);
                 handleLogin(data);
-
+                setIsLoading(false);
                 navigate('/home');
             })
             .catch(error => {
-                alert(error.response.data.message)
+                setIsLoading(false);
+                if(error.response === undefined){
+                    alert(error.message);
+                } else {
+                    alert(error.response.data.message)
+                }
+               
             });
         }
     }
@@ -50,11 +60,13 @@ export default function LoginForm({stateChanger}) {
             <p className="login__text-default">Entre na sua</p>
             <p className="login__text-default">conta</p>
             <p className="login__text-italic">e acompanhe suas leituras</p>
-            <form className="form__section">
-                <input className="input__box" name="email" placeholder="E-mail" onChange={handleChange} value={inputs.email || ""}/> <br></br>
+            <form name="form-hook" className="form__section">
+                
+                <input className="input__box" type="email" name="email"
+                       placeholder="E-mail" onChange={handleChange} value={inputs.email || "" }/> <br></br>
                 <input className="input__box" name="password" placeholder="Senha" onChange={handleChange} value={inputs.password || ""}/> <br></br>
                 <div className="button__section">
-                    <input type="button" className="form__button" onClick={handleSubmit} value="Login"/>
+                    <input type="button" className="form__button" onClick={handleSubmit} disabled={isLoading} value="Login"/>
                 </div>
             </form>
             <div className="component__footer">
