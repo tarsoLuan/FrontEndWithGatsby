@@ -31,7 +31,7 @@ export default function AddBook({pageChanger}) {
         if(isEmpty === true){
             alert('Preencha todos os campos (incluindo a imagem)');
         } else {
-            axios.post('https://192.168.0.104:8080/api/book/create', inputs).then(response => {
+            axios.post('https://mono.arduine.cloud/api/book/create', inputs).then(response => {
                 console.log(response);
                 pageChanger(0);
             })

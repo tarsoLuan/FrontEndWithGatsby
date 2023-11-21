@@ -23,7 +23,7 @@ export default function Profile({}) {
     useEffect(() => {
         setIsLoading(true);
        
-        axios.get('https://192.168.0.104:8080/api/review/last', {params: {id: user.id, limit: 3}}).then(response => {
+        axios.get('https://mono.arduine.cloud/api/review/last', {params: {id: user.id, limit: 3}}).then(response => {
           setItems(response.data);
           
           setIsLoading(false);
@@ -33,7 +33,7 @@ export default function Profile({}) {
             console.error(error);
         });
 
-        axios.get('https://192.168.0.104:8080/api/review/lastNotNull', {params: {id: user.id, limit: 4}}).then(response => {
+        axios.get('https://mono.arduine.cloud/api/review/lastNotNull', {params: {id: user.id, limit: 4}}).then(response => {
           console.log('response.data ->' + JSON.stringify(response.data));
           setReviews(response.data);
           
