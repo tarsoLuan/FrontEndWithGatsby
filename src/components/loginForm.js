@@ -35,7 +35,7 @@ export default function LoginForm({stateChanger}) {
             alert('Preencha todos os campos');
             setIsLoading(false)
         } else {
-            axios.post('https://mono.arduine.cloud/api/user', inputs)
+            axios.post('https://monoserver.arduine.cloud/api/user', inputs)
             .then(res=>res.data)
             .then(data=> {
                 console.log(data);

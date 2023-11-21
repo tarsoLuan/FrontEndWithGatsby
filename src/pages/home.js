@@ -25,7 +25,7 @@ const IndexPage = () => {
   useEffect(() => {
     setIsLoading(true);
    
-    axios.get('https://mono.arduine.cloud/api/review/last', {params: {id: user.id, limit: 5}}).then(response => {
+    axios.get('https://monoserver.arduine.cloud/api/review/last', {params: {id: user.id, limit: 5}}).then(response => {
       setItems(response.data);
       console.log(response.data);
       setIsLoading(false);
@@ -35,7 +35,7 @@ const IndexPage = () => {
         console.error(error);
       });
 
-      axios.get('https://mono.arduine.cloud/api/review/lastNotNull', {params: {id: user.id, limit: 1}}).then(response => {
+      axios.get('https://monoserver.arduine.cloud/api/review/lastNotNull', {params: {id: user.id, limit: 1}}).then(response => {
           console.log('response.data ->' + JSON.stringify(response.data));
           setReviews(response.data);
           
