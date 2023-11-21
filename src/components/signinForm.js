@@ -71,7 +71,7 @@ export default function LoginForm({stateChanger}) {
             if(isEmpty === true){
                 alert('Preencha todos os campos');
             } else {
-                axios.post('http://192.168.0.104:8080/api/user/create', inputs).then(response => {
+                axios.post('https://192.168.0.104:8080/api/user/create', inputs).then(response => {
                     alert('Cadastrado com sucesso');
                     console.log(response.data);
                     stateChanger(false);

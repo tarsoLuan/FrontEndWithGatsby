@@ -27,7 +27,7 @@ export default function BookSearch({pageChanger, bookChanger}) {
 
     const handleSearch = (input) => {
         console.log('searching...');
-        axios.get('http://192.168.0.104:8080/api/book', {params: {name: input, limit: 3}}).then((response) => {
+        axios.get('https://192.168.0.104:8080/api/book', {params: {name: input, limit: 3}}).then((response) => {
             console.log(response);
             if(response.data.length > 0) {
                 setResults(response.data);

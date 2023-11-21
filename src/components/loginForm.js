@@ -35,7 +35,7 @@ export default function LoginForm({stateChanger}) {
             alert('Preencha todos os campos');
             setIsLoading(false)
         } else {
-            axios.post('http://192.168.0.104:8080/api/user', inputs)
+            axios.post('https://192.168.0.104:8080/api/user', inputs)
             .then(res=>res.data)
             .then(data=> {
                 console.log(data);
