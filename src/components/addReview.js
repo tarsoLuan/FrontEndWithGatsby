@@ -51,7 +51,7 @@ export default function AddBook({pageChanger, book}) {
             alert('Preencha todos os campos');
         } else {
             console.log('integrando')
-            axios.post('https://monoserver.arduine.cloud/api/review/create', inputs).then(response => {
+            axios.post('https://monoserver.tarso.cloud/api/review/create', inputs).then(response => {
                 console.log(response);
 
                 pageChanger(0);

@@ -71,7 +71,7 @@ export default function LoginForm({stateChanger}) {
             if(isEmpty === true){
                 alert('Preencha todos os campos');
             } else {
-                axios.post('https://monoserver.arduine.cloud/api/user/create', inputs).then(response => {
+                axios.post('https://monoserver.tarso.cloud/api/user/create', inputs).then(response => {
                     alert('Cadastrado com sucesso');
                     console.log(response.data);
                     stateChanger(false);
